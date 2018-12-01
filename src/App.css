@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +18,79 @@
   color: white;
 }
 
+.App-header h1 label {
+  color: #ff7b00;
+  font-size: 40px;
+  vertical-align: text-top;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.App-options {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  border-bottom: 2px solid #282c34;
+}
+
+.App-options button {
+  background-color: #282c34;
+  color: #ffffff;
+  border: 0;
+  height: 45px;
+  width: 150px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.App-options button:nth-of-type(2) {
+  margin: 0 10px;
+}
+
+.App-content {
+  height: calc(100vh - 230px);
+  margin: 0 5%;
+}
+
+.App-content .item {
+  text-decoration: none;
+  color: #282c34;
+}
+
+.App-content .item:hover .box {
+  background-color: #cccccc;
+}
+
+.App-content .box {
+  display: flex;
+  align-items: center;
+  height: 140px;
+  border-bottom: 2px solid #282c34;
+}
+
+.App-content .box .thumb {
+  width: 100px;
+  height: 100px;
+  background-color: #282c34;
+}
+
+.App-content .box .infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100px;
+}
+
+.App-content .box .infos h3, p, span, label {
+  margin: 0 10px;
+}
+
+.App-content .box span {
+  color: #ff7b00;
 }
 
 @keyframes App-logo-spin {
