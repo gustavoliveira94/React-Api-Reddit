@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class Rising extends Component {
 
     state = {
-        rising: []
+        rising: [],
+        limit: 10
     }
 
     componentWillMount() {
@@ -20,13 +21,19 @@ class Rising extends Component {
             })
     }
 
+    changeLimit = () => {
+        this.setState({
+            limit: 100000
+        })
+    }
+
     render() {
         return (
             <div>
                 {
-                    this.state.rising.map((rising) => {
+                    this.state.rising.slice(0, this.state.limit).map((rising) => {
                         return (
-                            <a className="item" key={rising.id} href={rising.url} target="_blank">
+                            <a className="item" key={rising.id} href={rising.url} target="window.open();">
                                 <div className="box" key={rising.id}>
                                     <div className="thumb">
                                         <img alt={rising.title} src={rising.thumbnail === 'self' || rising.thumbnail === 'default' ? 'https://ugross.gallerycdn.vsassets.io/extensions/ugross/vscode-react-snippets/1.3.0/1519481679046/Microsoft.VisualStudio.Services.Icons.Default' : rising.thumbnail} width="100px" height="100px" />
@@ -41,6 +48,13 @@ class Rising extends Component {
                         )
                     })
                 }
+                <Fragment>
+                    {
+                        this.state.rising.length > 10 &&
+                        <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
+                        ? <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button> : 'Nenhuma resultado encontrado!'
+                    }
+                </Fragment>
             </div>
         );
     }

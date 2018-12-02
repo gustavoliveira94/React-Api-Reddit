@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class News extends Component {
 
     state = {
-        news: []
+        news: [],
+        limit: 10
     }
 
     componentWillMount() {
@@ -20,13 +21,19 @@ class News extends Component {
             })
     }
 
+    changeLimit = () => {
+        this.setState({
+            limit: 100000
+        })
+    }
+
     render() {
         return (
             <div>
                 {
-                    this.state.news.map((news) => {
+                    this.state.news.slice(0, this.state.limit).map((news) => {
                         return (
-                            <a className="item" key={news.id} href={news.url} target="_blank">
+                            <a className="item" key={news.id} href={news.url} target="window.open();">
                                 <div className="box" key={news.id}>
                                     <div className="thumb">
                                         <img alt={news.title} src={news.thumbnail === 'self' || news.thumbnail === 'default' ? 'https://ugross.gallerycdn.vsassets.io/extensions/ugross/vscode-react-snippets/1.3.0/1519481679046/Microsoft.VisualStudio.Services.Icons.Default' : news.thumbnail} width="100px" height="100px" />
@@ -41,6 +48,13 @@ class News extends Component {
                         )
                     })
                 }
+                <Fragment>
+                    {
+                        this.state.news.length > 10 &&
+                        <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
+                        ? <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button> : 'Nenhuma resultado encontrado!'
+                    }
+                </Fragment>
             </div>
         );
     }

@@ -3,7 +3,8 @@ import React, { Component, Fragment } from 'react';
 class Hot extends Component {
 
     state = {
-        hot: []
+        hot: [],
+        limit: 10
     }
 
     componentWillMount() {
@@ -20,13 +21,20 @@ class Hot extends Component {
             })
     }
 
+    changeLimit = () => {
+        this.setState({
+            limit: 100000
+        })
+    }
+
     render() {
+        console.log(this.state.hot.slice(0, 5))
         return (
             <div>
                 {
-                    this.state.hot.map((hot) => {
+                    this.state.hot.slice(0, this.state.limit).map((hot) => {
                         return (
-                            <a className="item" href={hot.url} target="_blank" key={hot.id}>
+                            <a className="item" href={hot.url} target="window.open();" key={hot.id}>
                                 <div className="box">
                                     <div className="thumb">
                                         <img alt={hot.title} src={hot.thumbnail === 'self' || hot.thumbnail === 'default' ? 'https://ugross.gallerycdn.vsassets.io/extensions/ugross/vscode-react-snippets/1.3.0/1519481679046/Microsoft.VisualStudio.Services.Icons.Default' : hot.thumbnail} width="100px" height="100px" />
@@ -41,6 +49,13 @@ class Hot extends Component {
                         )
                     })
                 }
+                <Fragment>
+                    {
+                        this.state.hot.length > 10 &&
+                        <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
+                        ? <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button> : 'Nenhuma resultado encontrado!'
+                    }
+                </Fragment>
             </div>
         );
     }
