@@ -7,18 +7,17 @@ class Hot extends Component {
         limit: 10
     }
 
-    componentWillMount() {
-        const url = 'https://www.reddit.com/r/reactjs/hot.json';
-        console.log(url)
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data.data.children)
-                this.setState({ hot: data.data.children.map(data => data.data) });
-            })
-            .catch(error => {
-                console.error("Não foi possível carregar a api.", error)
-            })
+    async componentDidMount() {
+        try {
+            const response = await fetch('https://www.reddit.com/r/reactjs/hot.json');
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            const data = await response.json();
+            this.setState({ hot: data.data.children.map(data => data.data) });
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     changeLimit = () => {
@@ -51,9 +50,8 @@ class Hot extends Component {
                 }
                 <Fragment>
                     {
-                        this.state.hot.length <= 0 &&
-                        'Nenhuma resultado encontrado!'
-                        ? 'Nenhuma resultado encontrado!' : <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
+                        this.state.hot.length <= 0
+                            ? 'Nenhuma resultado encontrado!' : <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
                     }
                 </Fragment>
             </div>
