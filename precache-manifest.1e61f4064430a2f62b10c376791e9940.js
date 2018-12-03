@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/react-api-reddit/static/js/runtime~main.89e5679f.js"
   },
   {
-    "revision": "d6d492d563ada681b70c",
-    "url": "/react-api-reddit/static/js/main.d6d492d5.chunk.js"
+    "revision": "7af0c8d8a6f493864525",
+    "url": "/react-api-reddit/static/js/main.7af0c8d8.chunk.js"
   },
   {
     "revision": "5ced9bd3111a696c3a06",
     "url": "/react-api-reddit/static/js/1.5ced9bd3.chunk.js"
   },
   {
-    "revision": "d6d492d563ada681b70c",
+    "revision": "7af0c8d8a6f493864525",
     "url": "/react-api-reddit/static/css/main.e241de94.chunk.css"
   },
   {
-    "revision": "3955e9c588aad35c70f39b9d8a3d02a0",
+    "revision": "f20ff4e7014de8c1e5b1914a8bdfd43a",
     "url": "/react-api-reddit/index.html"
   }
 ];
