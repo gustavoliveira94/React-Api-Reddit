@@ -11,12 +11,12 @@ class BoxContent extends Component {
         return (
             <div>
                 <Switch>
-                    <Route exact path="/react-api-reddit/" component={Hot} />
-                    <Route exact path="/react-api-reddit/hot" component={Hot} />
-                    <Route exact path="/react-api-reddit/news" component={News} />
-                    <Route exact path="/react-api-reddit/rising" component={Rising} />
-                    <Route path="/react-api-reddit/404" component={NotFound} />
-                    <Redirect from='*' to='/react-api-reddit/404' />
+                    <Route exact path="https://gustavoliveira94.github.io//react-api-reddit/" component={Hot} />
+                    <Route exact path="https://gustavoliveira94.github.io//react-api-reddit/hot" component={Hot} />
+                    <Route exact path="https://gustavoliveira94.github.io//react-api-reddit/news" component={News} />
+                    <Route exact path="https://gustavoliveira94.github.io//react-api-reddit/rising" component={Rising} />
+                    <Route path="https://gustavoliveira94.github.io//react-api-reddit/404" component={NotFound} />
+                    <Redirect from='*' to='https://gustavoliveira94.github.io//react-api-reddit/404' />
                 </Switch>
             </div>
         );
