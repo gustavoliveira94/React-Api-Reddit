@@ -52,7 +52,7 @@ class Rising extends Component {
                     {
                         this.state.rising.length <= 0 &&
                         'Nenhuma resultado encontrado!'
-                        ? <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button> : <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
+                        ? 'Nenhuma resultado encontrado!' : <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
                     }
                 </Fragment>
             </div>
