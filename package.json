@@ -1,6 +1,6 @@
 {
   "name": "reddit",
-  "homepage": "https://gustavoliveira94.github.io/React-Api-Reddit",
+  "homepage": "https://gustavoliveira94.github.io/react-api-reddit",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
