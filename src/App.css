@@ -20,7 +20,7 @@
 
 .App-header h1 label {
   color: #ff7b00;
-  font-size: 40px;
+  font-size: calc(25px + 2vmin);
   vertical-align: text-top;
 }
 

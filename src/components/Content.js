@@ -10,8 +10,7 @@ class Content extends Component {
         rising: false,
         colorHot: '#ff7b00',
         colorNews: '',
-        colorRising: '',
-        request: ''
+        colorRising: ''
     }
 
     changeHot = () => {
