@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/React-Api-Reddit/precache-manifest.d2cafa60de2e8d877b9ca2749a8319a0.js"
+  "/react-api-reddit/precache-manifest.bf0e150a6929abe42eab297a287b8947.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/React-Api-Reddit/index.html", {
+workbox.routing.registerNavigationRoute("/react-api-reddit/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
