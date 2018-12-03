@@ -9,13 +9,13 @@ class BoxContent extends Component {
         return (
             <div>
                 {this.props.hot === true &&
-                    <Hot />
+                    <Hot/>
                 }
                 {this.props.news === true &&
-                    <News />
+                    <News/>
                 }
                 {this.props.rising === true &&
-                    <Rising />
+                    <Rising/>
                 }
             </div>
         );

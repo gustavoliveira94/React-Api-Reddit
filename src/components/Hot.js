@@ -51,9 +51,9 @@ class Hot extends Component {
                 }
                 <Fragment>
                     {
-                        this.state.hot.length > 10 &&
-                        <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
-                        ? <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button> : 'Nenhuma resultado encontrado!'
+                        this.state.hot.length <= 0 &&
+                        'Nenhuma resultado encontrado!'
+                        ? <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button> : <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
                     }
                 </Fragment>
             </div>
