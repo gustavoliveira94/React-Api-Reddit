@@ -22,7 +22,7 @@ class Hot extends Component {
 
     changeLimit = () => {
         this.setState({
-            limit: 100000
+            limit: this.state.limit + 10
         })
     }
 
@@ -51,7 +51,12 @@ class Hot extends Component {
                 <Fragment>
                     {
                         this.state.hot.length <= 0
-                            ? 'Nenhuma resultado encontrado!' : <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
+                            ? 'Nenhuma resultado encontrado!' : ''
+                    }
+                    {
+
+                        this.state.limit < this.state.hot.length
+                            ? <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button> : ''
                     }
                 </Fragment>
             </div>

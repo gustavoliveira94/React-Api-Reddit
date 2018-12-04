@@ -48,9 +48,14 @@ class News extends Component {
                     })
                 }
                 <Fragment>
-                    {
+                {
                         this.state.news.length <= 0
-                            ? 'Nenhuma resultado encontrado!' : <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button>
+                            ? 'Nenhuma resultado encontrado!' : ''
+                    }
+                    {
+
+                        this.state.limit < this.state.news.length
+                            ? <button className="ver-mais" onClick={this.changeLimit}>+ Ver mais</button> : ''
                     }
                 </Fragment>
             </div>
