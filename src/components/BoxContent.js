@@ -15,7 +15,7 @@ class BoxContent extends Component {
                     <Route exact path="/react-api-reddit/hot" component={Hot} />
                     <Route exact path="/react-api-reddit/news" component={News} />
                     <Route exact path="/react-api-reddit/rising" component={Rising} />
-                    <Route path="/react-api-reddit/404" component={NotFound} />
+                    <Route exact path="/react-api-reddit/404" component={NotFound} />
                     <Redirect from='*' to='/react-api-reddit/404' />
                 </Switch>
             </div>
