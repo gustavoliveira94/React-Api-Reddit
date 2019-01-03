@@ -22,7 +22,7 @@ class News extends Component {
 
     changeLimit = () => {
         this.setState({
-            limit: 100000
+            limit: this.state.limit + 10
         })
     }
 

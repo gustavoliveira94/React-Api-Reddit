@@ -6,7 +6,6 @@ class Hot extends Component {
         hot: [],
         limit: 10
     }
-
     async componentDidMount() {
         try {
             const response = await fetch('https://www.reddit.com/r/reactjs/hot.json');
